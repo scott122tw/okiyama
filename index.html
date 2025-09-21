@@ -7,7 +7,8 @@
   <style>
     body { font-family: 'Noto Sans TC', Arial, sans-serif; background: #f7f7fa; color: #222; margin: 0; }
     header { background: linear-gradient(90deg,#4a90e2 80%,#f7c873 100%); color: #fff; padding: 2.5rem 1rem 1.5rem 1rem; text-align: center; }
-    main { max-width: 98vw; overflow-x:auto; margin: 2rem auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px #bbb; padding: 2.5rem 1rem; }
+    main { max-width: 98vw; margin: 2rem auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px #bbb; padding: 2.5rem 1rem; }
+    .table-responsive { width: 100%; overflow-x: auto; }
     table { border-collapse: collapse; width: 100%; min-width: 1100px; background: #fff; }
     th, td { border: 1px solid #e0e0e0; padding: 0.7em 0.5em; text-align: left; vertical-align: top; }
     th { background: #f7c873; color: #222; font-size:1.1em; }
@@ -19,31 +20,11 @@
     .imgbox { text-align:center; margin:0.5em 0; }
     .imgbox img { width:90%; max-width:180px; border-radius:8px; box-shadow:0 2px 8px #bbb; }
     .imgcap { color:#888; font-size:0.92em; margin-bottom:0.5em; }
-    /* 手機友善表格 */
     @media (max-width: 800px) {
       main { padding: 1rem 0.2rem; }
-      table, thead, tbody, th, td, tr { display: block; width: 100%; }
-      thead { display: none; }
-      tr { margin-bottom: 1.5em; border-radius: 10px; box-shadow: 0 1px 6px #ccc; background: #fff; }
-      td { border: none; border-bottom: 1px solid #eee; position: relative; padding-left: 45%; min-height: 2.5em; font-size: 1em; }
-      td:last-child { border-bottom: 0; }
-      td:before {
-        position: absolute;
-        top: 0.7em;
-        left: 0.7em;
-        width: 40%;
-        white-space: pre-wrap;
-        font-weight: bold;
-        color: #4a90e2;
-        font-size: 0.98em;
-      }
-      td:nth-of-type(1):before { content: '日期'; }
-      td:nth-of-type(2):before { content: '行程/景點'; }
-      td:nth-of-type(3):before { content: '交通'; }
-      td:nth-of-type(4):before { content: '餐廳/美食'; }
-      td:nth-of-type(5):before { content: '購物/備註'; }
-      td:nth-of-type(6):before { content: '代表照片'; }
       .imgbox img { max-width: 98vw; width: 100%; }
+      th, td { font-size: 0.98em; }
+      table { min-width: 700px; }
     }
   </style>
 </head>
@@ -53,7 +34,8 @@
     <div style="font-size:1.1em;color:#ffe066;font-weight:bold;">2025年10月17日～10月24日 | 三陽三陰鐵路周遊券</div>
   </header>
   <main>
-    <table>
+    <div class="table-responsive">
+      <table>
       <tr>
         <th>日期</th>
         <th>行程/景點</th>
@@ -126,10 +108,12 @@
   <td>從住宿步行至後樂園約40分</td>
   <td class="imgbox"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Okayama_Castle_and_Korakuen_Garden.jpg"><div class="imgcap">岡山城與後樂園</div></td>
       </tr>
-    </table>
+      </table>
+    </div>
   </main>
   <footer>
     © 2025 岡山八天七夜行程表格版
   </footer>
 </body>
 </html>
+
